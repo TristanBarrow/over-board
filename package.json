@@ -10,7 +10,7 @@
     "serve": "nodemon index.js",
     "run": "node indes.js",
     "push": "git push github master; git push heroku master",
-    "build": "sass ./private/scss/index.scss ./public/styles/styles.css",
+    "build": "node-sass ./private/scss/index.scss ./public/styles/styles.css",
     "test": "jest"
   },
   "dependencies": {
