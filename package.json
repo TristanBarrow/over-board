@@ -9,9 +9,9 @@
   "scripts": {
     "serve": "nodemon index.js",
     "run": "node indes.js",
-    "test": "node test.js",
-    "push": "git push github master; git push heroku master",
-    "build": "sass ./private/scss/index.scss ./public/styles/styles.css"
+    "push": "sass ./private/scss/index.scss ./public/styles/styles.css; git push github master; git push heroku master",
+    "build": "sass ./private/scss/index.scss ./public/styles/styles.css",
+    "test": "jest"
   },
   "dependencies": {
     "ejs": "^2.5.6",
