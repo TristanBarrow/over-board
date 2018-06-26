@@ -9,15 +9,17 @@
   "scripts": {
     "serve": "node index.js",
     "test": "node test.js",
-    "push": "git push github master; git push heroku master"
+    "push": "git push github master; git push heroku master",
+    "build": "sass ./private/scss/index.scss ./public/styles/styles.css"
   },
   "dependencies": {
     "ejs": "^2.5.6",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "node-sass": "^4.9.0"
   },
   "devDependencies": {
-    "request": "^2.81.0",
-    "tape": "^4.7.0"
+    "jest": "^23.2.0",
+    "request": "^2.81.0"
   },
   "repository": {
     "type": "git",
