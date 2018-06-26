@@ -9,7 +9,7 @@
   "scripts": {
     "serve": "nodemon index.js",
     "run": "node indes.js",
-    "push": "sass ./private/scss/index.scss ./public/styles/styles.css; git push github master; git push heroku master",
+    "push": "git push github master; git push heroku master",
     "build": "sass ./private/scss/index.scss ./public/styles/styles.css",
     "test": "jest"
   },
