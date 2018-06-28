@@ -25,16 +25,16 @@ const login = (req, res) => {
 }
 
 // PUT /user/info + body            # Updates users password
-const updatePassword = (req, res) => {
+const updateUserInfo = (req, res) => {
     res.send('Update User Password');
 }
 
 module.exports = {
-    getUserInfo,
-    createUser,
-    updateUser,
-    deleteUser,
-    login,
-    updatePassword
+    getUserInfo: getUserInfo,
+    createUser: createUser,
+    updateUser: updateUser,
+    deleteUser: deleteUser,
+    login: login,
+    updateUserInfo: updateUserInfo
 }
 

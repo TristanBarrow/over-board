@@ -15,7 +15,7 @@ const deleteFriend = (req, res) => {
 }
 
 module.exports = {
-    getFriends,
-    addFriend,
-    deleteFriend
+    getFriends: getFriends,
+    addFriend: addFriend,
+    deleteFriend: deleteFriend
 }

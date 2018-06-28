@@ -3,7 +3,7 @@ const redirect = (req, res) => {
     res.send('Redirect page');
 }
 
-const loginPage = (req, res) => {
+const login = (req, res) => {
     res.send('Login page');
 }
 
@@ -16,8 +16,8 @@ const home = (req, res) => {
 }
 
 module.exports = {
-    redirect,
-    loginPage,
-    createAccount,
-    home
+    redirect: redirect,
+    login: login,
+    createAccount: createAccount,
+    home: home
 }

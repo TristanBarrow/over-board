@@ -4,8 +4,8 @@ GET     /user/:id                   # Get a users info
 POST    /user/:id + body            # Create a new user
 PUT     /user/:id + body            # Updates a user
 DELETE  /user/:id + body            # Deletes user with required login info
-POST    /user/login + body          # Logs the a user in and verifies user exists
-PUT     /user/info + body           # Updates users password
+POST    /user-login + body          # Logs the a user in and verifies user exists
+PUT     /user-info + body           # Updates users password
 
 -- FRIENDS --
 GET     /friends/:id                # Gets a users friends

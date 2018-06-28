@@ -1,21 +1,53 @@
 const express = require('express');
-const p = require('path');
-const boards = require(p.join(__dirname, ''));
+
+const boards = require("./private/endpoints/boards.js");
+const friends = require("./private/endpoints/friends.js");
+const pages = require("./private/endpoints/pages.js");
+const tricks = require("./private/endpoints/tricks.js");
+const user = require("./private/endpoints/user.js");
+
 const PORT = process.env.PORT || 5000;
 const app = express();
+// console.log(boards);
+// console.log(friends);
+// console.log(pages);
+// console.log(tricks);
+// console.log(user);
 
-
-app.get('/', (req, res) => {
-  res.send('Hello OverBoard!');
-});
+app.get('/', pages.redirect);
 
 /** PAGES **/
 
-app.get('/login', );
+app.get('/login', pages.login);
+app.get('/create-account', pages.createAccount);
+app.get('/home', pages.home);
 
-app.
+/** USER **/
+app.route('/user/:id')
+  .get(user.getUserInfo)
+  .post(user.createUser)
+  .put(user.updateUser)
+  .delete(user.deleteUser);
 
+app.get('/user-login', user.login);
+app.put('/user-info', user.updateUserInfo);
 
+/** FRIENDS **/
+app.route('/friends/:id')
+  .get(friends.getFriends)
+  .post(friends.addFriend)
+  .delete(friends.deleteFriend);
 
+/** TRICKS **/
+
+app.route("/tricks/:id")
+  .get(tricks.getTricks)
+  .post(tricks.addTrick)
+  .put(tricks.updateTrick)
+  .delete(tricks.deleteTrick);
+
+// /** BOARDS **/
+app.get('/boards', boards.getBoards);
+app.get('/board/:name', boards. getBoardTricks);
 
 app.listen(PORT, console.log('Over Board is Listening on Port: ' + PORT));

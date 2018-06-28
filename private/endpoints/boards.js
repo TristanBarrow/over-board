@@ -9,6 +9,6 @@ const getBoardTricks = (req, res) => {
 }
 
 module.exports = {
-    getBoards,
-    getBoardTricks
+    getBoards: getBoards,
+    getBoardTricks: getBoardTricks
 }
