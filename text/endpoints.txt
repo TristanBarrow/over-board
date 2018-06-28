@@ -14,7 +14,7 @@ DELETE  /friends/:id                # Deletes a friend
 
 -- TRICKS --
 GET     /tricks/:id                 # Gets a users tricks
-POST    /tricks/:id + body          # Add a uset trick 
+POST    /tricks/:id + body          # Add a trick 
 PUT     /tricks/:id + body          # Updates trick status
 DELETE  /tricks/:id + body          # Deletes A trick 
 
@@ -28,4 +28,4 @@ GET     / (not logged in)           # Redirect to /login
 GET     / (logged in)               # Redirect to /home
 GET     /login                      # Login page
 GET     /create-account             # Create account page
-GET     /home                       # App interface.
+GET     /home                       # App interface
