@@ -11,6 +11,7 @@
     "run": "node indes.js",
     "push": "git push github master; git push heroku master",
     "build": "node-sass ./private/scss/index.scss ./public/styles/styles.css",
+    "db": "bash ./private/database/createDB.bash",
     "test": "jest"
   },
   "dependencies": {
