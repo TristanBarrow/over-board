@@ -6,6 +6,8 @@ const pages = require("./private/endpoints/pages.js");
 const tricks = require("./private/endpoints/tricks.js");
 const user = require("./private/endpoints/user.js");
 
+require('dotenv').config();
+
 const PORT = process.env.PORT || 5000;
 const app = express();
 // console.log(boards);
