@@ -1,0 +1,31 @@
+# Everything in this file first falls under /api
+-- USER --
+GET     /user/:id                   # Get a users info
+POST    /user/:id + body            # Create a new user
+PUT     /user/:id + body            # Updates a user
+DELETE  /user/:id + body            # Deletes user with required login info
+POST    /user-login + body          # Logs the a user in and verifies user exists
+PUT     /user-info + body           # Updates users password
+
+-- FRIENDS --
+GET     /friends/:id                # Gets a users friends
+POST    /friends/:id + body         # adds a friend
+DELETE  /friends/:id                # Deletes a friend
+
+-- TRICKS --
+GET     /tricks/:id                 # Gets a users tricks
+POST    /tricks/:id + body          # Add a trick 
+PUT     /tricks/:id + body          # Updates trick status
+DELETE  /tricks/:id + body          # Deletes A trick 
+
+-- BOARDS -- 
+GET     /boards                     # Gets each boards info
+GET     /board/:name                # Gets a specific boards set of tricks
+
+
+# These are the pages that will be avalable to the user. (these will not be prefaced with /api)
+GET     / (not logged in)           # Redirect to /login
+GET     / (logged in)               # Redirect to /home
+GET     /login                      # Login page
+GET     /create-account             # Create account page
+GET     /home                       # App interface
