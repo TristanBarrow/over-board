@@ -1,6 +1,26 @@
+require('dotenv').config();
+
+const { Client } = require('pg');
+const client = new Client({
+    connectionString: process.env.DATABASE_URL
+});
 
 const redirect = (req, res) => {
-    res.send('Redirect page');
+
+    client.query('SELECT * FROM users', (err, queryRes) => {
+        if (!!err) {
+            throw err;
+        }
+        for (let row of queryRes.rows) {
+            console.log(JSON.stringify(row));
+            res.json(row);
+        }
+        client.end();
+    });
+
+    client.connect();
+
+    
 }
 
 const login = (req, res) => {
