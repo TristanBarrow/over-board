@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 
 const { Client } = require('pg');
 const client = new Client({
@@ -19,8 +19,6 @@ const redirect = (req, res) => {
     });
 
     client.connect();
-
-    
 }
 
 const login = (req, res) => {
