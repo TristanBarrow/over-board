@@ -9,7 +9,6 @@
   "scripts": {
     "start": "node index.js",
     "serve": "nodemon index.js",
-    "run": "node indes.js",
     "push": "git push github master; git push heroku master",
     "build": "node-sass ./private/scss/index.scss ./public/styles/styles.css",
     "db": "bash ./private/database/createLocalDB.bash;bash ./private/database/createDB.bash",
