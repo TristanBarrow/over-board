@@ -8,7 +8,8 @@ const getBoards = (callback) => {
 }
 
 const getTricks = (trick, callback) => {
-    const query = 'SELECT name FROM tricks WHERE board = (SELECT id FROM boards WHERE name = :trick)';
+    console.log(trick);
+    const query = 'SELECT name FROM tricks WHERE board = (SELECT id FROM boards WHERE name = $1)';
     pool.query(query, [trick], (err, result) => {
         callback(err, result.rows);
     });

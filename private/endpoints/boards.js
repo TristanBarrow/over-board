@@ -13,8 +13,8 @@ const getBoards = (req, res) => {
 }
 // GET     /board/:name                # Gets a specific boards set of tricks
 const getBoardTricks = (req, res) => {
-    
-    db.getTricks(boardsLU(res.params.name, true), (err, response) => {
+    const name = boardsLU(req.params.name, true);
+    db.getTricks(name, (err, response) => {
         if (err) {
             console.log(err);
             res.status(400).send('A Database Error Occered we will get back to you soon.');
