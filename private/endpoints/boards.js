@@ -1,4 +1,5 @@
 const db = require('../db-access/boards');
+const boardsLU = require('../cradle/boards.js'); 
 
 // GET     /boards                     # Gets each boards info
 const getBoards = (req, res) => {
@@ -12,7 +13,15 @@ const getBoards = (req, res) => {
 }
 // GET     /board/:name                # Gets a specific boards set of tricks
 const getBoardTricks = (req, res) => {
-    res.send('Info for a specific board');
+    
+    db.getTricks(boardsLU(res.params.name, true), (err, response) => {
+        if (err) {
+            console.log(err);
+            res.status(400).send('A Database Error Occered we will get back to you soon.');
+        }
+        res.json(response);
+    });
+   
 }
 
 module.exports = {
