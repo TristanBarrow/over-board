@@ -13,14 +13,14 @@ CREATE TABLE users(
 
 CREATE TABLE boards(
     id SERIAL PRIMARY KEY,
-    name VARCHAR(100)
+    name VARCHAR(100) NOT NULL
 );
 
 -- Follower style relationshp not friend relationship
 CREATE TABLE users_followers(
     id SERIAL PRIMARY KEY,
-    users int REFERENCES users(id) NOT NULL,
-    followers int REFERENCES users(id) NOT NULL
+    me int REFERENCES users(id) NOT NULL,
+    following int REFERENCES users(id) NOT NULL
 );
 
 CREATE TABLE tricks(
@@ -31,15 +31,15 @@ CREATE TABLE tricks(
 
 CREATE TABLE proficancies(
     id SERIAL PRIMARY KEY,
-    proficieny_title VARCHAR(100),
-    proficieny_notes VARCHAR(1024)
+    proficieny_title VARCHAR(100) NOT NULL,
+    proficieny_notes VARCHAR(1024) NOT NULL
 ); 
 
 CREATE TABLE users_tricks(
     id SERIAL PRIMARY KEY,
-    users INT REFERENCES users(id),
-    trick INT REFERENCES trickS(id),
-    proficieny INT REFERENCES proficancies(id),
+    username INT REFERENCES users(id) NOT NULL,
+    trick INT REFERENCES trickS(id) NOT NULL,
+    proficieny INT REFERENCES proficancies(id) NOT NULL,
     notes VARCHAR(8192),
     UNIQUE (users, trick)
 );
