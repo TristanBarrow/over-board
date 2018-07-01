@@ -1,0 +1,53 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Project Title / One sentence description:
+
+OverBoard / A social media for boarders of all types to help everyone progress.
+
+2. Copy and paste the URL for one of your Web service endpoints at Heroku:
+
+https://over-board.herokuapp.com/
+
+3. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/TristanBarrow/over-board
+
+4. List the name of each of the Web service endpoints that are working:
+
+-- BOARDS -- 
+GET     /boards                     # Gets each boards info
+GET     /board/:name                # Gets a specific boards set of tricks (skate, ldp, downhill, snow)
+
+5. List any Web service endpoints that are not yet functioning:
+
+-- USER --
+GET     /user/:id                   # Get a users info
+POST    /user/:id + body            # Create a new user
+PUT     /user/:id + body            # Updates a user
+DELETE  /user/:id + body            # Deletes user with required login info
+POST    /user-login + body          # Logs the a user in and verifies user exists
+PUT     /user-info + body           # Updates users password
+
+-- FRIENDS --
+GET     /friends/:id                # Gets a users friends
+POST    /friends/:id + body         # adds a friend
+DELETE  /friends/:id                # Deletes a friend
+
+-- TRICKS --
+GET     /tricks/:id                 # Gets a users tricks
+POST    /tricks/:id + body          # Add a trick 
+PUT     /tricks/:id + body          # Updates trick status
+DELETE  /tricks/:id + body          # Deletes A trick 
+
+6. Please select the category you feel best describes your assignment:
+D - Meets requirements
+
+7. Provide a brief justification (1-2 sentences) for selecting that category.
+
+As said in class if we got one working we are under "Meets requirements".
+
+8. Please list any questions you have for the instructor regarding this assignment or this week's topic.
+
+I don't have questions but I did alot of Admin type things with docker and bash files and getting my 
+development environment setup. I am very proud of this project so far even though it does not look like much
+right now.
