@@ -41,5 +41,5 @@ CREATE TABLE users_tricks(
     trick INT REFERENCES trickS(id) NOT NULL,
     proficieny INT REFERENCES proficancies(id) NOT NULL,
     notes VARCHAR(8192),
-    UNIQUE (users, trick)
+    UNIQUE (username, trick)
 );
