@@ -50,6 +50,6 @@ app.route("/tricks/:id")
 
 // /** BOARDS **/
 app.get('/boards', boards.getBoards);
-app.get('/board/:name', boards. getBoardTricks);
+app.get('/board/:name', boards.getBoardTricks);
 
 app.listen(PORT, console.log('Over Board is Listening on Port: ' + PORT));
