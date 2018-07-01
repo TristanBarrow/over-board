@@ -1,19 +1,6 @@
-require('dotenv').config();
-
-const { Pool } = require('pg');
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL
-});
 
 const redirect = (req, res) => {
-
-    pool.query('SELECT * FROM users', null, (err, result) => {
-        if (err) {
-            console.log(err);
-        }
-        res.json(result.rows);
-    });
-
+    res.send('Redirect Page');
 }
 
 const login = (req, res) => {
