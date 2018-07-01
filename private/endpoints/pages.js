@@ -1,25 +1,19 @@
 // require('dotenv').config();
 
-const { Client } = require('pg');
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl:true
+const { Pool } = require('pg');
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL
 });
 
 const redirect = (req, res) => {
 
-    client.query('SELECT * FROM users', (err, queryRes) => {
-        if (!!err) {
-            throw err;
+    pool.query('SELECT * FROM users', null, (err, result) => {
+        if (err) {
+            console.log(err);
         }
-        for (let row of queryRes.rows) {
-            console.log(JSON.stringify(row));
-            res.json(row);
-        }
-        client.end();
+        res.json(result);
     });
 
-    client.connect();
 }
 
 const login = (req, res) => {
