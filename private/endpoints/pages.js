@@ -8,7 +8,7 @@ const client = new Client({
 
 const redirect = (req, res) => {
 
-    client.query('SELECT NOW()', (err, queryRes) => {
+    client.query('SELECT * FROM users', (err, queryRes) => {
         if (!!err) {
             throw err;
         }
