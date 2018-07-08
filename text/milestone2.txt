@@ -1,0 +1,31 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Project Title / One sentence description:
+
+OverBoard / A social media for boarders of all types to help everyone progress.
+
+2. Copy and paste the URL for your web application (if applicable):
+
+https://over-board.herokuapp.com/
+
+3. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/TristanBarrow/over-board
+
+4. Describe the functionality that is currently working, along with any special instructions of how to use your web application:
+
+the main layout and ui exists and looks okay. I have one working example of using my api on the client side.
+
+5. Describe the features that are not yet working correctly.
+
+The ui does not look good, many of my end points are not fully implemented and several of the ajax calls are not working.
+
+D - Meets requirements
+
+7. Provide a brief justification (1-2 sentences) for selecting that category.
+
+I got one example working so I know how to do it. I just need to put more time into the app.
+
+8. Please list any questions you have for the instructor regarding this assignment or this week's topic.
+
+I dont have any questions.

@@ -1,14 +1,15 @@
+const p = require('path');
 
 const redirect = (req, res) => {
     res.redirect('/login');
 }
 
 const login = (req, res) => {
-    res.send('Login page');
+    res.sendFile(p.join(__dirname, '..', '..', 'pages', 'login.html'));
 }
 
 const createAccount = (req, res) => {
-    res.send('Create Account pag')
+    res.sendFile(p.join(__dirname, '..', '..', 'pages', 'create-account.html'));
 }
 
 const home = (req, res) => {
