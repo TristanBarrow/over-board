@@ -1,6 +1,6 @@
 
 const redirect = (req, res) => {
-    res.send('Redirect Page');
+    res.redirect('/login');
 }
 
 const login = (req, res) => {

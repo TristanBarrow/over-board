@@ -1,6 +1,6 @@
 INSERT INTO users(username, password) VALUES 
-('Bob', 'secretpasswordhash'),
-('TristanBarrow', 'password1234');
+('TEST USER', '0000000000'),
+('TEST FOLLOWER', '0000000000');
 
 INSERT INTO boards(name) VALUES 
 ('Skateboard'),
@@ -9,7 +9,7 @@ INSERT INTO boards(name) VALUES
 ('Snowboard');
 
 INSERT INTO users_followers(me, following) VALUES 
-((SELECT id FROM users WHERE username = 'TristanBarrow'), ((SELECT id FROM users WHERE username = 'Bob')));
+((SELECT id FROM users WHERE username = 'TEST USER'), ((SELECT id FROM users WHERE username = 'TEST FOLLOWER')));
 
 INSERT INTO tricks(name, board) VALUES 
 ('Just Riding', (SELECT id FROM boards WHERE name = 'Skateboard')),
@@ -28,13 +28,13 @@ INSERT INTO proficancies(proficieny_title, proficieny_notes) VALUES
 
 INSERT INTO users_tricks(username, trick, proficieny, notes) VALUES 
 (
-    (SELECT id FROM users WHERE username = 'TristanBarrow'),
+    (SELECT id FROM users WHERE username = 'TEST USER'),
     (SELECT id FROM tricks WHERE name = 'Just Riding'),
     (SELECT id FROM proficancies WHERE proficieny_title = 'Comfortable'),
     'I am very comfortable on a Longboard but I am just now getting comfortable with a SkateBoard.'
 ),
 (
-    (SELECT id FROM users WHERE username = 'TristanBarrow'),
+    (SELECT id FROM users WHERE username = 'TEST USER'),
     (SELECT id FROM tricks WHERE name = 'Ollie'),
     (SELECT id FROM proficancies WHERE proficieny_title = 'Attempted'),
     'I have made some small attempts at it but I could try harder.'

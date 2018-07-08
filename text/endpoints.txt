@@ -6,6 +6,7 @@ PUT     /user/:id + body            # Updates a user
 DELETE  /user/:id + body            # Deletes user with required login info
 POST    /user-login + body          # Logs the a user in and verifies user exists
 PUT     /user-info + body           # Updates users password
+GET     /check-username/:username   # check if Username already exists
 
 -- FRIENDS --
 GET     /friends/:id                # Gets a users friends
