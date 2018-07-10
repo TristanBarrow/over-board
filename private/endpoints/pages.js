@@ -13,7 +13,7 @@ const createAccount = (req, res) => {
 }
 
 const home = (req, res) => {
-    res.send('Home Page');
+    res.sendFile(p.join(__dirname, '..', '..', 'pages', 'home.html'));
 }
 
 module.exports = {

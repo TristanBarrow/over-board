@@ -8,13 +8,18 @@ const getUserInfo = (req, res) => {
 // GET /check-username/:username
 const checkUsername = (req, res) => {
     db.checkUsername(req.params.username, (err, response) => {
-        console.log(response)
+        if (response) {
+            console.log("Username " + req.params.username + " is avalable (" + response + ")");
+        } else {
+            console.log("Username " + req.params.username + " is not avalable (" + response + ")");
+        }
         res.json(response);
     });
 }
 
 // POST /user/create + body            # Create a new user
 const createUser = (req, res) => {
+    console.log(req.body)
     db.createUser(req.body.username, req.body.password, (err) => {
         if (err) {
             res.json({

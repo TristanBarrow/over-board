@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/styles/styles.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="./js/createAccount.js"></script>
     <title>OverBoard: Create Account</title>
 </head>
@@ -14,10 +15,12 @@
         <span class='login__username'>Username</span>
         <input type="text" id="username">
         <span class='login__password'>Password</span>
-        <input type="text" id="password">
+        <input type="password" id="password">
         <span class='login__password'>Verify Password</span>
-        <input type="text" id="password">
+        <input type="password" id="ver-password">
         <input type="button" value="Create Account" type="button" onclick="createAccount()">
     </form>
+    <a href="/login">Back to Login</a>
+    <div id="error"></div>
 </body>
 </html>
