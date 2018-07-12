@@ -5,7 +5,7 @@ const checkUsername = (username, callback) => {
     const query = 'SELECT username FROM users WHERE username = $1';
     pool.query(query, [username], (err, result) => {
         if (err) {
-            callback(err, "Error connecting to database.");
+            callback(err, err);
         } else {
             callback(err, (result.rowCount != 0));
         }
@@ -24,13 +24,26 @@ const createUser = (username, password, callback) => {
 const verifyPassword = (username, password, callback) => {
     const query = 'SELECT password AS password FROM users WHERE username = $1';
     pool.query(query, [username], (err, result) => {
-        
+        callback(err, passwordHash.verify(password, result.rows[0].password));
     });
 }
 
+const deleteUser = (username, callback) => {
+    const query = 'DELETE FROM users WHERE username = $1';
+    pool.query(query, [username], (err, result) => {
+        console.log(result);
+        callback(err, result);
+    });
+}
+
+const changePassword = (password, callback) => {
+    callback(null, false);
+}
 
 module.exports = {
     checkUsername: checkUsername,
     createUser: createUser,
-    verifyPassword: verifyPassword
+    verifyPassword: verifyPassword,
+    changePassword: changePassword,
+    deleteUser: deleteUser
 }

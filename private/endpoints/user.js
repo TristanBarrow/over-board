@@ -45,13 +45,18 @@ const updateUser = (req, res) => {
 
 // DELETE /user/:id + body          # Deletes user with required login info
 const deleteUser = (req, res) => {
-    res.send('Delete User');
+    db.deleteUser(req.body.username, (err, response) => {
+        res.json({res: res });
+    });
+
 }
 
 // POST /user/login + body          # Logs the a user in and verifies user exists
 const login = (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
+
+    console.log(username, password);
     db.checkUsername(username, (err, response) => {
         if (err) {
             throw err;
@@ -59,9 +64,9 @@ const login = (req, res) => {
         if (!response) {
             res.json({ success: false });
         }
-        db.verifyPassword(username, password, (err, hash) => {
+        db.verifyPassword(username, password, (err, success) => {
             res.json({
-                hash: hash
+                success: success
             });
         });
     });
@@ -69,7 +74,9 @@ const login = (req, res) => {
 
 // PUT /user/info + body            # Updates users password
 const updateUserInfo = (req, res) => {
-    res.send('Update User Password');
+    db.updatePassword(req.body.password, (err, response) => {
+        res.json({ success: response});
+    });
 }
 
 module.exports = {

@@ -31,13 +31,13 @@ app.get('/create-account', pages.createAccount);
 app.get('/home', pages.home);
 
 /** USER **/
-app.route('/user/:id')
+app.route('/user/:username')
   .get(user.getUserInfo)
   .put(user.updateUser)
   .delete(user.deleteUser);
 
 app.post('/user/create', user.createUser);
-app.get('/user-login', user.login);
+app.post('/user-login', user.login);
 app.get('/check-username/:username', user.checkUsername);
 app.put('/user-info', user.updateUserInfo);
 
