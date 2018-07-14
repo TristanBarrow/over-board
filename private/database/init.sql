@@ -1,5 +1,5 @@
 DROP TABLE users_tricks;
-DROP TABLE proficancies;
+DROP TABLE proficiencies;
 DROP TABLE tricks;
 DROP TABLE users_followers;
 DROP TABLE boards;
@@ -29,17 +29,17 @@ CREATE TABLE tricks(
     board int REFERENCES boards(id)
 );
 
-CREATE TABLE proficancies(
+CREATE TABLE proficiencies(
     id SERIAL PRIMARY KEY,
-    proficieny_title VARCHAR(100) NOT NULL,
-    proficieny_notes VARCHAR(1024) NOT NULL
+    proficiency_title VARCHAR(100) NOT NULL,
+    proficiency_notes VARCHAR(1024) NOT NULL
 ); 
 
 CREATE TABLE users_tricks(
     id SERIAL PRIMARY KEY,
     username INT REFERENCES users(id) NOT NULL,
     trick INT REFERENCES trickS(id) NOT NULL,
-    proficieny INT REFERENCES proficancies(id) NOT NULL,
+    proficiency INT REFERENCES proficiencies(id) NOT NULL,
     notes VARCHAR(8192),
     UNIQUE (username, trick)
 );

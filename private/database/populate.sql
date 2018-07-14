@@ -19,23 +19,23 @@ INSERT INTO tricks(name, board) VALUES
 ('Shuvit', (SELECT id FROM boards WHERE name = 'Skateboard')),
 ('Pop Shuvit', (SELECT id FROM boards WHERE name = 'Skateboard'));
 
-INSERT INTO proficancies(proficieny_title, proficieny_notes) VALUES
+INSERT INTO proficiencies(proficiency_title, proficiency_notes) VALUES
 ('Never Tried', 'I have never even attempted.'),
 ('Attempted', 'I have attempted this.'),
 ('Achieved', 'I have done this atleast once'),
 ('Comfortable', 'I have done this several times but it still requires some concentration.'),
 ('Mastered', 'I have mastered this and can do it without even thinking about it.');
 
-INSERT INTO users_tricks(username, trick, proficieny, notes) VALUES 
+INSERT INTO users_tricks(username, trick, proficiency, notes) VALUES 
 (
     (SELECT id FROM users WHERE username = 'TEST USER'),
     (SELECT id FROM tricks WHERE name = 'Just Riding'),
-    (SELECT id FROM proficancies WHERE proficieny_title = 'Comfortable'),
+    (SELECT id FROM proficiencies WHERE proficiency_title = 'Comfortable'),
     'I am very comfortable on a Longboard but I am just now getting comfortable with a SkateBoard.'
 ),
 (
     (SELECT id FROM users WHERE username = 'TEST USER'),
     (SELECT id FROM tricks WHERE name = 'Ollie'),
-    (SELECT id FROM proficancies WHERE proficieny_title = 'Attempted'),
+    (SELECT id FROM proficiencies WHERE proficiency_title = 'Attempted'),
     'I have made some small attempts at it but I could try harder.'
 );
