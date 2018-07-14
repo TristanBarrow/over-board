@@ -1,9 +1,9 @@
 const db = require('../db-access/user.js'); 
 
-// GET /user/:id                    # Get a users info
-const getUserInfo = (req, res) => {
-    res.send('Get user info');   
-}
+// GET /user/username                    # Get a users info
+// const getUserInfo = (req, res) => {
+//     res.send('Get user info');   
+// }
 
 // GET /check-username/:username
 const checkUsername = (req, res) => {
@@ -38,17 +38,23 @@ const createUser = (req, res) => {
     });
 }
 
-// PUT /user/:id + body             # Updates a user
+// PUT /user/password + body             # Updates a user
 const updateUser = (req, res) => {
-    res.send('Updates a users info');
+    db.changePassword(req.body.username, req.body.password, (err, response) => {
+        res.json({ error: err, response: response });
+    });
 }
 
-// DELETE /user/:id + body          # Deletes user with required login info
+// DELETE /user + body          # Deletes user with required login info
 const deleteUser = (req, res) => {
     db.deleteUser(req.body.username, (err, response) => {
-        res.json({res: res });
+        if (err) {
+            res.json({ success: false });
+            console.log(err);
+        } else {
+            res.json({ success: true });
+        }
     });
-
 }
 
 // POST /user/login + body          # Logs the a user in and verifies user exists
@@ -80,7 +86,6 @@ const updateUserInfo = (req, res) => {
 }
 
 module.exports = {
-    getUserInfo: getUserInfo,
     createUser: createUser,
     updateUser: updateUser,
     deleteUser: deleteUser,

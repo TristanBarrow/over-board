@@ -1,7 +1,16 @@
+const db = require('../db-access/tricks.js');
+
 
 // GET     /tricks/:id                 # Gets a users tricks
 const getTricks = (req, res) => {
-    res.send('Gets tricks');
+    console.log(req.params.username);
+    db.getTricks(req.params.username, (err, result) => {
+        if(err) {
+            res.json({ success: false });
+        } else {
+            res.json({ success: true, tricks: result });
+        }
+    });
 }
 
 // POST    /tricks/:id + body          # Add a uset trick 
