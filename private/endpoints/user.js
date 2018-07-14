@@ -20,7 +20,7 @@ const checkUsername = (req, res) => {
 // POST /user/create + body            # Create a new user
 const createUser = (req, res) => {
     console.log(req.body)
-    db.createUser(req.body.username, req.body.password, (err) => {
+    db.createUser(req.body.username, req.body.password, (err, result) => {
         if (err) {
             res.json({
                 success: false,

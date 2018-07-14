@@ -11,11 +11,12 @@ const getBoards = (req, res) => {
         res.json(response);
     });
 }
+
 // GET     /board/:name                # Gets a specific boards set of tricks
 const getBoardTricks = (req, res) => {
     // The url will have small spaceless tag on it this translates it into something the db 
     // can understand.
-    const name = translateBoardNames(req.params.name, true);
+    const name = translateBoardNames(req.params.board, true);
     db.getTricks(name, (err, response) => {
         if (err) {
             console.log(err);

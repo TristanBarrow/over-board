@@ -1,7 +1,11 @@
 const p = require('path');
 
 const redirect = (req, res) => {
-    res.redirect('/login');
+    if (req.session.user) {
+        res.redirect('/home');
+    } else {
+        res.redirect('/login');
+    }
 }
 
 const login = (req, res) => {

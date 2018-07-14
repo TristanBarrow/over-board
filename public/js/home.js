@@ -13,8 +13,6 @@ var boardDiv = function(content) {
     var node = document.createElement("DIV");
     node.className = "board";
     node.onclick = function() { requestBoardTricks(content); }
-
-
     
     var textnode = document.createTextNode(content);
     node.appendChild(textnode);
