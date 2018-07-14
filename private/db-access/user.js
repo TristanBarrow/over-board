@@ -36,7 +36,8 @@ const deleteUser = (username, callback) => {
     });
 }
 
-const changePassword = (password, callback) => {
+const changePassword = (username, password, callback) => {
+    const query = '';
     callback(null, false);
 }
 

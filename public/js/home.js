@@ -33,8 +33,12 @@ var populateBoards = function() {
     });
 }
 
+var populateUser = function() {
+
+}
+
 
 $(function(){
     populateBoards();
-    
+    populateUser();
 });

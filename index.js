@@ -42,14 +42,14 @@ app.get('/check-username/:username', user.checkUsername);
 app.put('/user-info', user.updateUserInfo);
 
 /** FRIENDS **/
-app.route('/friends/:id')
+app.route('/friends/:username')
   .get(friends.getFriends)
   .post(friends.addFriend)
   .delete(friends.deleteFriend);
 
 /** TRICKS **/
 
-app.route("/tricks/:id")
+app.route("/tricks/:username")
   .get(tricks.getTricks)
   .post(tricks.addTrick)
   .put(tricks.updateTrick)
