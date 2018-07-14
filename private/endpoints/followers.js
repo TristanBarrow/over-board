@@ -1,7 +1,7 @@
-const db = require('../db-access/friends.js');
+const db = require('../db-access/followers.js');
 
 // GET     /friends/:username                 # Gets a users friends
-const getFriends = (req, res) => {
+const getFollowers = (req, res) => {
     db.getFriends(req.query, (err, response) => {
         if (err) {
             res.json(false);
@@ -11,22 +11,22 @@ const getFriends = (req, res) => {
 }
 
 // POST    /friends/:username + body          # adds a friend
-const addFriend = (req, res) => {
+const addFollower = (req, res) => {
     db.getFriends(req.query, (err, response) => {
         if (err) {
             res.json({ success: false });
         }
-        res.json(response);
+        res.json({success: true, log: response });
     });
 }
 
 // DELETE  /friends/:username + body          # Deletes a friend
-const deleteFriend = (req, res) => {
+const deleteFollower = (req, res) => {
     
 }
 
 module.exports = {
-    getFriends: getFriends,
-    addFriend: addFriend,
-    deleteFriend: deleteFriend
+    getFollowers: getFollowers,
+    addFollower: addFollower,
+    deleteFollower: deleteFollower
 }

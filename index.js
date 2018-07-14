@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const boards = require("./private/endpoints/boards.js");
-const friends = require("./private/endpoints/friends.js");
+const following = require("./private/endpoints/followers.js");
 const pages = require("./private/endpoints/pages.js");
 const tricks = require("./private/endpoints/tricks.js");
 const user = require("./private/endpoints/user.js");
@@ -12,11 +12,6 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 5000;
 const app = express();
-// console.log(boards);
-// console.log(friends);
-// console.log(pages);
-// console.log(tricks);
-// console.log(user);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -31,10 +26,9 @@ app.get('/create-account', pages.createAccount);
 app.get('/home', pages.home);
 
 /** USER **/
-app.route('/user/:username')
-  .get(user.getUserInfo)
-  .put(user.updateUser)
-  .delete(user.deleteUser);
+app.put('/user/password', user.updateUser);
+app.delete('/user', user.deleteUser);
+//  .get(user.getUserInfo)
 
 app.post('/user/create', user.createUser);
 app.post('/user-login', user.login);
@@ -42,13 +36,11 @@ app.get('/check-username/:username', user.checkUsername);
 app.put('/user-info', user.updateUserInfo);
 
 /** FRIENDS **/
-app.route('/friends/:username')
-  .get(friends.getFriends)
-  .post(friends.addFriend)
-  .delete(friends.deleteFriend);
+app.get('/following/:username', following.getFollowers);
+app.post('/following', following.addFollower);
+app.delete('/following', following.deleteFollower);
 
 /** TRICKS **/
-
 app.route("/tricks/:username")
   .get(tricks.getTricks)
   .post(tricks.addTrick)
