@@ -37,8 +37,11 @@ const deleteUser = (username, callback) => {
 }
 
 const changePassword = (username, password, callback) => {
-    const query = '';
-    callback(null, false);
+    const query = 'UPDATE users SET password = $2 WHERE username = $1';
+    const hashedPassword = passwordHash.generate(password);
+    pool.query(query, [username, hashedPassword], (err, response) => {
+        callback(err, response);
+    });
 }
 
 module.exports = {
