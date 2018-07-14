@@ -71,18 +71,21 @@ const login = (req, res) => {
             res.json({ success: false });
         }
         db.verifyPassword(username, password, (err, success) => {
+            request.session.user = username;
             res.json({
-                success: success
+                success: true
             });
         });
     });
 }
 
-// PUT /user/info + body            # Updates users password
-const updateUserInfo = (req, res) => {
-    db.updatePassword(req.body.password, (err, response) => {
-        res.json({ success: response});
-    });
+const logout = (req, res) => {
+	if (req.session.user) {
+		req.session.destroy();
+        res.json({ success: true });
+	} else {
+        res.json({ success: false });
+    }
 }
 
 module.exports = {
@@ -90,7 +93,7 @@ module.exports = {
     updateUser: updateUser,
     deleteUser: deleteUser,
     login: login,
-    updateUserInfo: updateUserInfo,
+    logout: logout,
     checkUsername: checkUsername
 }
 
