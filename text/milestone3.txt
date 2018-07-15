@@ -1,0 +1,37 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Project Title / One sentence description:
+
+OverBoard / A social media for boarders of all types to help everyone progress.
+
+2. Copy and paste the URL for your web application (if applicable):
+
+https://over-board.herokuapp.com/
+
+3. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/TristanBarrow/over-board
+
+4. Describe the functionality that is currently working, along with any special instructions of how to use your web application:
+
+Most if not all of my endpoints are working and are being tested using postman. Some client side ajax should be working and some of the 
+client side javascript and DOM manipulation should be working by the time I finish working tonight. 
+
+5. Describe the features that are not yet working correctly.
+
+The ui has zero styling. Some of the client side DOM manipulation still needs to be finished.
+
+6. Please select the category you feel best describes your assignment:
+
+D - Meets requirements
+
+7. Provide a brief justification (1-2 sentences) for selecting that category.
+
+I think its coming together quite well. I am doing some kinda sneaky stuff with my client side js and DOM manipulation.
+I am starting to test my app. I love the structure of the app. I am really enjoying this one.
+
+8. Please list any questions you have for the instructor regarding this assignment or this week's topic.
+
+Last week I was told to not create a new pool connection for each request. I didn't think that was happening.
+I put the pool connection on the req object so I only make one in my whole app so I think that should solve it.
+If I should do something different let me know.

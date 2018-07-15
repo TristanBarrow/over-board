@@ -14,7 +14,7 @@ https://github.com/TristanBarrow/over-board
 
 4. Describe the functionality that is currently working, along with any special instructions of how to use your web application:
 
-the main layout and ui exists and looks okay. I have one working example of using my api on the client side.
+The main layout and ui exists and looks okay. I have one working example of using my api on the client side.
 
 5. Describe the features that are not yet working correctly.
 
