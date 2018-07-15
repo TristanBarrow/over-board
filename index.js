@@ -47,11 +47,11 @@ app.delete('/api/following', auth, r.following.deleteFollower);
 /** TRICKS **/
 // NON-AUTH
 app.get("/api/tricks/:username", r.tricks.getTricks);
-
+app.get("/api/profs", r.tricks.getProficiencies);
 // AUTH
-app.post("/api/tricks/:username", auth, r.tricks.addTrick);
-app.put("/api/tricks/:username", auth, r.tricks.updateTrick);
-app.delete("/api/tricks/:username", auth, r.tricks.deleteTrick);
+app.post("/api/tricks", auth, r.tricks.addTrick);
+app.put("/api/tricks", auth, r.tricks.updateTrick);
+app.delete("/api/tricks", auth, r.tricks.deleteTrick);
 
 // /** BOARDS **/
 // NON-AUTH

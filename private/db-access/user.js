@@ -31,7 +31,6 @@ const verifyPassword = (username, password, callback) => {
 const deleteUser = (username, callback) => {
     const query = 'DELETE FROM users WHERE username = $1';
     pool.query(query, [username], (err, result) => {
-        console.log(result);
         callback(err, result);
     });
 }

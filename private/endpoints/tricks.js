@@ -15,22 +15,57 @@ const getTricks = (req, res) => {
 
 // POST    /tricks/:id + body          # Add a uset trick 
 const addTrick = (req, res) => {
-    res.send('Add Trick');
+    db.addTrick(req.body, (err, result) => {
+        if (err) {
+            res.json({ success: false });
+        } else {
+            res.json({ success: true });
+        }
+    });
 }
 
 // PUT     /tricks/:id + body          # Updates trick status
 const updateTrick = (req, res) => {
-    res.send('Update Trick');
+    db.deleteTrick(req.body.username, req.body.trick, (err, result) => {
+        if (err) {
+            res.json({ success: false, message: 'Issues in delete stage'});
+        } else {
+            db.addTrick(req.body, (err, result) => {
+                if (err) {
+                    res.json({ success: false, message: 'Issues in add stage'});
+                } else {
+                    res.json({ success: true });
+                }
+            });
+        }
+    });
 }
 
 // DELETE  /tricks/:id + body          # Deletes A trick 
 const deleteTrick = (req, res) => {
-    res.send('Deletes a trick');
+    db.deleteTrick(req.body.username, req.body.trickid, (err, result) => {
+        if (err) {
+            res.json({ success: false });
+        } else {
+            res.json({ success: true });
+        }
+    });
+}
+
+const getProficiencies = (req, res) => {
+    db.getProficiencies((err, result) => {
+        if (err) {
+            res.json({ success: false });
+        } else {
+            res.json(result);
+        }
+    });
 }
 
 module.exports = {
     getTricks: getTricks,
     addTrick: addTrick,
     updateTrick: updateTrick,
-    deleteTrick: deleteTrick
+    deleteTrick: deleteTrick,
+    getProficiencies: getProficiencies
 }

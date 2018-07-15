@@ -15,21 +15,30 @@ const getTricks = (username, callback) => {
 // }
 
 const addTrick = (trick, callback) => {
-    const query = '';
-    pool.query(query, [username], (err, result) => {
-        callback(result);
+    const query = 'INSERT INTO users_tricks(username, trick, proficiency, notes) VALUES((SELECT id FROM users WHERE username = $1), $2, $3, $4);';
+    const queryValues = [trick.username, trick.trick, trick.proficiency, trick.notes];
+    pool.query(query, queryValues, (err, result) => {
+        callback(err, result);
     });
 }
 
-const deleteTrick = (trick, callback) => {
-    const query = '';
-    pool.query(query, [username], (err, result) => {
-        callback(result);
+const deleteTrick = (username, trickid, callback) => {
+    const query = 'DELETE FROM users_tricks WHERE username = (SELECT id FROM users WHERE username = $1) AND trick = $2;';
+    pool.query(query, [username, trickid], (err, result) => {
+        callback(err, result);
+    });
+}
+
+const getProficiencies = (callback) => {
+    const query = 'SELECT id AS id, proficiency_title AS proficiency, proficiency_notes AS description FROM proficiencies';
+    pool.query(query, (err, result) => {
+        callback(err, result.rows);
     });
 }
 
 module.exports = {
     getTricks: getTricks,
     addTrick: addTrick,
-    deleteTrick: deleteTrick
+    deleteTrick: deleteTrick,
+    getProficiencies: getProficiencies
 }
