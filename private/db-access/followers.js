@@ -18,7 +18,7 @@ const addFollower = (me, follower, callback) => {
 
 // DELETE  /following               # Deletes a friend
 const deleteFollower = (me, follower, callback) => {
-    const query = 'DELETE FROM users_followers WHERE me = $1 AND following = $2';
+    const query = 'DELETE FROM users_followers WHERE me = (SELECT id FROM users WHERE username = $1) AND following = (SELECT id FROM users WHERE username = $2)';
     pool.query(query, [me, follower], (err, result) => {
         callback(err, result);
     });
