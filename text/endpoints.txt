@@ -8,10 +8,10 @@ POST    /user-login + body          # Logs the a user in and verifies user exist
 PUT     /user-info + body           # Updates users password
 GET     /check-username/:username   # check if Username already exists
 
--- FRIENDS --
-GET     /friends/:username                # Gets a users friends
-POST    /friends/:username + body         # adds a friend
-DELETE  /friends/:username                # Deletes a friend
+-- FOLLOWERS --
+GET     /following/:username                # Gets a users followers
+POST    /following/:username + body         # adds a friend
+DELETE  /following/:username                # Deletes a friend
 
 -- TRICKS --
 GET     /tricks/:username                 # Gets a users tricks

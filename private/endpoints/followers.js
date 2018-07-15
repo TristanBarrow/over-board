@@ -1,8 +1,8 @@
 const db = require('../db-access/followers.js');
 
-// GET     /friends/:username                 # Gets a users friends
+// GET     /following/:username                 # Gets a users followers
 const getFollowers = (req, res) => {
-    db.getFriends(req.query, (err, response) => {
+    db.getFollowers(req.query, (err, response) => {
         if (err) {
             res.json(false);
         }
@@ -10,9 +10,9 @@ const getFollowers = (req, res) => {
     });
 }
 
-// POST    /friends/:username + body          # adds a friend
+// POST    /following/:username + body          # adds a friend
 const addFollower = (req, res) => {
-    db.getFriends(req.query, (err, response) => {
+    db.getFollowers(req.query, (err, response) => {
         if (err) {
             res.json({ success: false });
         }
@@ -20,7 +20,7 @@ const addFollower = (req, res) => {
     });
 }
 
-// DELETE  /friends/:username + body          # Deletes a friend
+// DELETE  /following/:username + body          # Deletes a friend
 const deleteFollower = (req, res) => {
     
 }

@@ -1,6 +1,6 @@
 const pool = require('./initdb.js');
 
-// GET     /following/:username               # Gets a users friends
+// GET     /following/:username               # Gets a users followers
 const getFollowers = (me, callback) => {
     const query = 'SELECT username FROM users WHERE id = (SELECT following FROM users_followers WHERE me = (SELECT ID FROM users WHERE username = $1));';
     pool.query(query, [me], (err, result) => {

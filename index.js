@@ -38,7 +38,7 @@ app.post('/api/user/create', r.user.createUser);
 app.post('/api/user/login', r.user.login);
 app.get('/api/user/check/:username', r.user.checkUsername);
 
-/** FRIENDS **/
+/** FOLLOWERS **/
 // AUTH
 app.get('/api/following/:username', auth, r.following.getFollowers);
 app.post('/api/following', auth, r.following.addFollower);
