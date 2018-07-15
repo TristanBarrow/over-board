@@ -32,8 +32,10 @@ app.get('/home', r.pages.home);
 app.put('/api/user/password', auth, r.user.updateUser);
 app.delete('/api/user', auth, r.user.deleteUser);
 app.get('/api/user/logout', auth, r.user.logout);
+app.get('/api/me', auth, (req, res) => { res.json({ username: req.session.user || false }) });
 
 // NON-AUTH
+app.get('/api/user/byId/:id', r.user.getUser)
 app.post('/api/user/create', r.user.createUser);
 app.post('/api/user/login', r.user.login);
 app.get('/api/user/check/:username', r.user.checkUsername);

@@ -5,6 +5,13 @@ const db = require('../db-access/user.js');
 //     res.send('Get user info');   
 // }
 
+const getUser = (req, res) => {
+    db.getUser(req.params.id, (err, result) => {
+        console.log(result);
+        res.json(result);
+    });
+}
+
 // GET /check-username/:username
 const checkUsername = (req, res) => {
     db.checkUsername(req.params.username, (err, response) => {
@@ -19,7 +26,6 @@ const checkUsername = (req, res) => {
 
 // POST /user/create + body            # Create a new user
 const createUser = (req, res) => {
-    console.log(req.body)
     db.createUser(req.body.username, req.body.password, (err, result) => {
         if (err) {
             res.json({
@@ -93,6 +99,7 @@ module.exports = {
     deleteUser: deleteUser,
     login: login,
     logout: logout,
-    checkUsername: checkUsername
+    checkUsername: checkUsername,
+    getUser: getUser
 }
 

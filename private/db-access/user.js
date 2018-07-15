@@ -1,6 +1,13 @@
 const pool = require('./initdb.js'); 
 const passwordHash = require('password-hash');
 
+const getUser = (userid, callback) => {
+    const query = 'SELECT username FROM users WHERE id = $1';
+    pool.query(query, [userid], (err, result) => {
+        callback(err, result.rows[0].username);
+    });
+}
+
 const checkUsername = (username, callback) => {
     const query = 'SELECT username FROM users WHERE username = $1';
     pool.query(query, [username], (err, result) => {
@@ -53,5 +60,6 @@ module.exports = {
     createUser: createUser,
     verifyPassword: verifyPassword,
     changePassword: changePassword,
-    deleteUser: deleteUser
+    deleteUser: deleteUser,
+    getUser: getUser
 }
