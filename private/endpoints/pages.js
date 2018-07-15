@@ -16,8 +16,8 @@ const login = (req, res) => {
 }
 
 const createAccount = (req, res) => {
-    if (!req.session.user) {
-        res.redirect('/login');
+    if (req.session.user) {
+        res.redirect('/home');
     }
     res.sendFile(p.join(__dirname, '..', '..', 'pages', 'create-account.html'));
 }
