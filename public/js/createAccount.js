@@ -9,25 +9,20 @@ var sendData = function(username, password) {
         password: password
     };
     console.log(userData);
-    $.post('/user/create', userData, function(response) {
+    $.post('/api/user/create', userData, function(response) {
         if (!response.success) {
-            err("An unknown error occered contact your system Admin");
+            err("An unknown error occered I'm Sorry");
+        } else {
+            window.location = '/login';
         }
-        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
-          });
-        window.location = '/login';
     });
-    
 }
 
 var createAccount = function() {
     var username = $('#username').val();
     var password = $('#password').val();
     var verPassword = $('#ver-password').val();
+
     if (username == '') {
         err('Username is Required');
         return;
@@ -42,7 +37,7 @@ var createAccount = function() {
      };
 
 
-    $.get('/check-username/' + username, function(usernameExists) {
+    $.get('/api/user/check/' + username, function(usernameExists) {
         if (usernameExists) {
             err("Username Already Exists");
         } else {

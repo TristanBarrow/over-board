@@ -25,7 +25,7 @@ app.get('/', r.pages.redirect);
 
 app.get('/login', r.pages.login);
 app.get('/create-account', r.pages.createAccount);
-app.get('/home', auth, r.pages.home);
+app.get('/home', r.pages.home);
 
 /** USER **/
 // AUTH
@@ -57,5 +57,9 @@ app.delete("/api/tricks", auth, r.tricks.deleteTrick);
 // NON-AUTH
 app.get('/api/boards', r.boards.getBoards);
 app.get('/api/board/tricks/:board', r.boards.getBoardTricks);
+
+app.get('*', (req, res) => {
+    res.redirect('/');
+});
 
 app.listen(PORT, console.log('Over Board is Listening on Port: ' + PORT));
