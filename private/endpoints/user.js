@@ -41,7 +41,7 @@ const createUser = (req, res) => {
 // PUT /user/password + body             # Updates a user
 const updateUser = (req, res) => {
     db.changePassword(req.body.username, req.body.password, (err, response) => {
-        res.json({ error: err, response: response });
+        res.json({ success: !err });
     });
 }
 
@@ -71,7 +71,7 @@ const login = (req, res) => {
             res.json({ success: false });
         }
         db.verifyPassword(username, password, (err, success) => {
-            request.session.user = username;
+            req.session.user = username;
             res.json({
                 success: true
             });
