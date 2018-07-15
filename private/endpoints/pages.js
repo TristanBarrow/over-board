@@ -36,7 +36,7 @@ const home = (req, res) => {
     if (!req.session.user) {
         // res.status(301);
         // res.redirect('/login');
-        res.send("<script> window.location = '/home'; </script>");
+        res.send("<script> window.location = '/login'; </script>");
     } else {
         res.sendFile(p.join(__dirname, '..', '..', 'pages', 'home.html'));
     }
