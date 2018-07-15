@@ -60,21 +60,21 @@ const deleteUser = (req, res) => {
 const login = (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
-
-    console.log(username, password);
     db.checkUsername(username, (err, response) => {
         if (err) {
-            throw err;
-        }
-        if (!response) {
             res.json({ success: false });
-        }
-        db.verifyPassword(username, password, (err, success) => {
-            req.session.user = username;
-            res.json({
-                success: true
+        } else {
+            db.verifyPassword(username, password, (err, success) => {
+                if (err) {
+                    res.json({ success: false });
+                } else {
+                    req.session.user = username;
+                    res.json({ success: true });
+                }
+                
             });
-        });
+        }
+        
     });
 }
 

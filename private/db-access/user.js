@@ -24,7 +24,12 @@ const createUser = (username, password, callback) => {
 const verifyPassword = (username, password, callback) => {
     const query = 'SELECT password AS password FROM users WHERE username = $1';
     pool.query(query, [username], (err, result) => {
-        callback(err, passwordHash.verify(password, result.rows[0].password));
+        if (result.rowCount == 0) {
+            callback(true, 'password Does not Exist')
+        } else {
+            callback(err, passwordHash.verify(password, result.rows[0].password));
+        }
+        
     });
 }
 
