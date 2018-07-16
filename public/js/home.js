@@ -14,16 +14,16 @@ var requestBoardTricks = function(name) {
 
     $.get('/api/board/tricks/' + abr(name), function(data) {
         data.forEach(function(e) {
-            body.appendChild(div(e.name, 'trick', undefined));
+            var board = div(e.name, 'trick', undefined);
+            body.appendChild();
         });
-        
     });
 }
 
 var div = function(content, classType, onclick) {
     var node = document.createElement("DIV");
     node.className = classType;
-    node.onclick = function() { onclick(content) }
+    node.onclick = function() { onclick(content); }
     
     var textnode = document.createTextNode(content);
     node.appendChild(textnode);
@@ -37,7 +37,6 @@ var populateBoards = function() {
         data.forEach(e => {
             body.appendChild(div(e.name, 'board', requestBoardTricks));
         });
-        
     });
 }
 
@@ -54,7 +53,6 @@ var populateFollowers = function(me) {
         });
     })
 }
-
 
 $(function(){
     populateBoards();
