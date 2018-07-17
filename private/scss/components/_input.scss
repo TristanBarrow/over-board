@@ -1,0 +1,14 @@
+$login_spacing: 4rem;
+
+.input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    &__description {
+        font-weight: bolder;
+        color: #002438;
+    }
+    &__box {
+        width: 25rem;
+    }
+}

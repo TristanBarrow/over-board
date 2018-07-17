@@ -8,8 +8,11 @@
 
 html {
   font-size: 62.5%; // defines one rem
+  font-family: Helvetica, sans-serif;
 }
 
 body {
   box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
 }

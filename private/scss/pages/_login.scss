@@ -1,0 +1,39 @@
+.login-form {
+    font-size: $large_size;
+    position: absolute;
+    background-color: #72b3d8;
+    width: 50vw;
+    min-width: 45rem;
+    height: 50vh;
+    @include center;
+    border-radius: 1rem;
+    border: .4rem solid #1b648f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &__button {
+        background-color:#e4e4e4;
+        border-radius: 1rem;
+        text-align: center;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        font-size: 2rem;
+        padding: .8rem;
+        font-weight: bolder;
+        box-shadow: 0 .2rem 1rem #00224e;
+        //border: 1px solid black;
+        
+        &:hover {
+            transition: .2s;
+            transform: translateY(-.1rem);
+            box-shadow: 0 .5rem 1.5rem #00224e;
+        }
+        &:active {
+            transition: .2s;
+            transform: translateY(0);
+            box-shadow: 0 .2rem 1rem #00224e;
+        }
+        
+    }
+}

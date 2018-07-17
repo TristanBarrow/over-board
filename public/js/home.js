@@ -5,6 +5,19 @@ var me = function(callback) {
     })
 }
 
+var div = function(content, classType, onclick) {
+    var node = document.createElement("DIV");
+    node.className = classType;
+
+    if (typeof onclick != 'undefined'){
+        node.onclick = function() { onclick(content); }
+    }
+
+    var textnode = document.createTextNode(content);
+    node.appendChild(textnode);
+    return node;
+}
+
 var requestBoardTricks = function(name) {
     var body = document.getElementById('body');
     while(body.firstChild){
@@ -15,19 +28,11 @@ var requestBoardTricks = function(name) {
     $.get('/api/board/tricks/' + abr(name), function(data) {
         data.forEach(function(e) {
             var board = div(e.name, 'trick', undefined);
-            body.appendChild();
+            body.appendChild(board);
+            
+
         });
     });
-}
-
-var div = function(content, classType, onclick) {
-    var node = document.createElement("DIV");
-    node.className = classType;
-    node.onclick = function() { onclick(content); }
-    
-    var textnode = document.createTextNode(content);
-    node.appendChild(textnode);
-    return node;
 }
 
 var populateBoards = function() {

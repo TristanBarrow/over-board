@@ -6,10 +6,57 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  font-family: Helvetica, sans-serif; }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh; }
+
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+  .input__description {
+    font-weight: bolder;
+    color: #002438; }
+  .input__box {
+    width: 25rem; }
+
+.login-form {
+  font-size: 2.4rem;
+  position: absolute;
+  background-color: #72b3d8;
+  width: 50vw;
+  min-width: 45rem;
+  height: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  border: .4rem solid #1b648f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  .login-form__button {
+    background-color: #e4e4e4;
+    border-radius: 1rem;
+    text-align: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    font-size: 2rem;
+    padding: .8rem;
+    font-weight: bolder;
+    box-shadow: 0 .2rem 1rem #00224e; }
+    .login-form__button:hover {
+      transition: .2s;
+      transform: translateY(-0.1rem);
+      box-shadow: 0 .5rem 1.5rem #00224e; }
+    .login-form__button:active {
+      transition: .2s;
+      transform: translateY(0);
+      box-shadow: 0 .2rem 1rem #00224e; }
 
 .testClass {
   color: green; }
