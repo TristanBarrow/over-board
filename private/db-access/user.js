@@ -55,11 +55,19 @@ const changePassword = (username, password, callback) => {
     });
 }
 
+const getAll = (callback) => {
+    const query = 'SELECT username FROM users';
+    pool.query(query, (err, result) => {
+        callback(err, result.rows);
+    });
+}
+
 module.exports = {
     checkUsername: checkUsername,
     createUser: createUser,
     verifyPassword: verifyPassword,
     changePassword: changePassword,
     deleteUser: deleteUser,
-    getUser: getUser
+    getUser: getUser,
+    getAll: getAll
 }

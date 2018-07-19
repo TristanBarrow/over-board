@@ -93,6 +93,12 @@ const logout = (req, res) => {
     }
 }
 
+const getAll = (req, res) => {
+    db.getAll((err, rows) => {
+        res.json(rows);
+    });
+}
+
 module.exports = {
     createUser: createUser,
     updateUser: updateUser,
@@ -100,6 +106,7 @@ module.exports = {
     login: login,
     logout: logout,
     checkUsername: checkUsername,
-    getUser: getUser
+    getUser: getUser,
+    getAll: getAll
 }
 

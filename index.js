@@ -36,7 +36,8 @@ app.get('/api/user/logout', auth, r.user.logout);
 app.get('/api/me', auth, (req, res) => { res.json({ username: req.session.user || false }) });
 
 // NON-AUTH
-app.get('/api/user/byId/:id', r.user.getUser)
+app.get('/api/user/all', r.user.getAll);
+app.get('/api/user/byId/:id', r.user.getUser);
 app.post('/api/user/create', r.user.createUser);
 app.post('/api/user/login', r.user.login);
 app.get('/api/user/check/:username', r.user.checkUsername);

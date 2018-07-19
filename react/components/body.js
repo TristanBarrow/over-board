@@ -1,11 +1,13 @@
 import React from 'react';
 
 class Body extends React.Component {
-    constructor() {
-
+    constructor(props) {
+        super(props);
     }
     render() {
-        
+        return(
+            <div>hi</div>
+        );
     }
 }
 

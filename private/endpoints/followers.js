@@ -4,7 +4,7 @@ const db = require('../db-access/followers.js');
 const getFollowers = (req, res) => {
     db.getFollowers(req.params.username, (err, response) => {
         if (err) {
-            res.json(false);
+            res.json({success: false });
         }
         res.json(response.rows);
     });
