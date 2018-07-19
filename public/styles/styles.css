@@ -24,6 +24,30 @@ body {
   .input__box {
     width: 25rem; }
 
+.top-bar {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 4rem;
+  position: fixed;
+  background-color: aqua; }
+
+.side-bar {
+  top: 4rem;
+  left: 0;
+  height: calc(100vh - 4rem);
+  width: 10rem;
+  position: fixed;
+  background-color: aquamarine; }
+
+.body {
+  top: 4rem;
+  left: 10rem;
+  height: calc(100vh - 4rem);
+  width: calc(100vw - 10rem);
+  position: fixed;
+  background-color: beige; }
+
 .login-form {
   font-size: 2.4rem;
   position: absolute;
@@ -57,6 +81,3 @@ body {
       transition: .2s;
       transform: translateY(0);
       box-shadow: 0 .2rem 1rem #00224e; }
-
-.testClass {
-  color: green; }

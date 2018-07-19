@@ -36,11 +36,15 @@ var requestBoardTricks = function(name) {
 }
 
 var populateBoards = function() {
+    var body = document.getElementById('body');
+    var boards = document.createElement('div', {
+        className: 'body--boards'
+    });
+    body.appendChild(boards);
     $.get('/api/boards', (data) => {
-        var body = document.getElementById('body');
 
         data.forEach(e => {
-            body.appendChild(div(e.name, 'board', requestBoardTricks));
+            boards.appendChild(div(e.name, 'board', requestBoardTricks));
         });
     });
 }
@@ -59,7 +63,10 @@ var populateFollowers = function(me) {
     })
 }
 
+
+
 $(function(){
+
     populateBoards();
     me((me) => {
         document.getElementById('username').innerHTML = me;

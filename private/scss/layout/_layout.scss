@@ -1,0 +1,29 @@
+$topBarHeight: 4rem;
+$sideBarWidth: 10rem;
+
+.top-bar {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: $topBarHeight;
+    position: fixed;
+    background-color: aqua;
+}
+
+.side-bar {
+    top: $topBarHeight;
+    left: 0;
+    height: calc(100vh - 4rem);
+    width: $sideBarWidth;
+    position: fixed;
+    background-color: aquamarine;
+}
+
+.body {
+    top: $topBarHeight;
+    left: $sideBarWidth;
+    height: calc(100vh - 4rem);
+    width: calc(100vw - 10rem);
+    position: fixed;
+    background-color: beige;
+}

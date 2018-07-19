@@ -18,3 +18,9 @@ var login = function() {
     }
     $.post('/api/user/login', data, success, 'json');
 }
+
+window.onkeydown = function(e) {
+    if (document.activeElement.id == 'login-button') {
+        $('#login-button').click();
+    }
+};
