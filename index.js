@@ -44,7 +44,7 @@ app.get('/api/user/check/:username', r.user.checkUsername);
 
 /** FOLLOWERS **/
 // AUTH
-app.get('/api/following/:username', auth, r.following.getFollowers);
+app.get('/api/following', auth, r.following.getFollowers);
 app.post('/api/following', auth, r.following.addFollower);
 app.delete('/api/following', auth, r.following.deleteFollower);
 

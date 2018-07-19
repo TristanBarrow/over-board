@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "serve:server": "nodemon index.js",
+    "serve:node": "nodemon index.js",
     "push": "git push github master; git push heroku master",
     "build:sass": "node-sass ./private/scss/index.scss ./public/styles/styles.css",
     "watch": "node-sass ./private/scss/index.scss ./public/styles/styles.css -w",

@@ -4,10 +4,21 @@ var err = function(message) {
 }
 
 var login = function() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    if (username == '') {
+        err('Username is Reqired');
+        return;
+    }
+    if (password = '') {
+        err('Password is Required');
+        return;
+    }
     var data = {
         username: document.getElementById('username').value,
         password: document.getElementById('password').value
     }
+    console.log(data);
     var success = function(data) {
         console.log(data);
         if (data.success) {

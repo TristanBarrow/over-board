@@ -24,6 +24,25 @@ body {
   .input__box {
     width: 25rem; }
 
+.header {
+  background-color: #6b2ff7;
+  width: 100vw;
+  height: 5.5rem;
+  font-size: 3.2rem;
+  padding: 1rem; }
+
+.sideBar {
+  position: fixed;
+  top: 5.5rem;
+  left: 0;
+  width: 25rem;
+  height: calc(100vh - 5.5rem);
+  background-color: #3d07ba;
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+  padding-top: 1rem; }
+
 .top-bar {
   top: 0;
   left: 0;

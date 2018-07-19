@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Header = () => {
-    return(
-        <div className='site-title'>OverBoard</div>
-    );
-}
+const Header = (props) => {
+    return (
+        <div className='header'>OverBoard - {props.name}</div>
+    )
+};
 
 export default Header;

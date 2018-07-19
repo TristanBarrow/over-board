@@ -1,0 +1,12 @@
+.sideBar {
+    position: fixed;
+    top: $topBarHeight;
+    left: 0;
+    width: 25rem; 
+    height: calc(100vh - 5.5rem);
+    background-color: darken(rgb(108, 48, 247), 20);
+    color: white;
+    font-size: 1.6rem;
+    text-align: center;
+    padding-top: 1rem;
+}  

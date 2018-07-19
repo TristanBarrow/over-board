@@ -5,7 +5,7 @@ const translateBoardNames = require('../cradle/boards.js');
 const getBoards = (req, res) => {
     db.getBoards((err, response) => {
         if (err) {
-            res.status(400).send('A Database Error Occered we will get back to you soon.');
+            res.json({ success: false });
         }
         res.json(response);
     });
@@ -18,7 +18,7 @@ const getBoardTricks = (req, res) => {
     const name = translateBoardNames(req.params.board, true);
     db.getTricks(name, (err, response) => {
         if (err) {
-            res.status(400).send('There was an error. Please try again.');
+            res.json({ success: false });
         }
         res.json(response);
     });

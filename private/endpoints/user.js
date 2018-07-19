@@ -66,6 +66,16 @@ const deleteUser = (req, res) => {
 const login = (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
+
+    if (username == ''|| password == '') {
+        res.json({ success: false, message: 'Missing Credientials'});
+        return;
+    }
+    if (req.session.user) {
+        res.json({ success: false, message: 'Already Logged in'});
+        return;
+    }
+
     db.checkUsername(username, (err, response) => {
         if (err) {
             res.json({ success: false });

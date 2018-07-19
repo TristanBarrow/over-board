@@ -20,7 +20,8 @@ CREATE TABLE boards(
 CREATE TABLE users_followers(
     id SERIAL PRIMARY KEY,
     me int REFERENCES users(id) NOT NULL,
-    following int REFERENCES users(id) NOT NULL
+    following int REFERENCES users(id) NOT NULL,
+    UNIQUE (me, following)
 );
 
 CREATE TABLE tricks(
