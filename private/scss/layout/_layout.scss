@@ -16,7 +16,7 @@ $sideBarWidth: 10rem;
     height: calc(100vh - 4rem);
     width: $sideBarWidth;
     position: fixed;
-    background-color: aquamarine;
+    background-color: #392561;
 }
 
 .body {
@@ -25,5 +25,5 @@ $sideBarWidth: 10rem;
     height: calc(100vh - 4rem);
     width: calc(100vw - 10rem);
     position: fixed;
-    background-color: beige;
+    background-color: #6e5d8f;
 }

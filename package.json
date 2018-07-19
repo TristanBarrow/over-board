@@ -11,6 +11,7 @@
     "serve": "nodemon index.js",
     "push": "git push github master; git push heroku master",
     "build": "node-sass ./private/scss/index.scss ./public/styles/styles.css",
+    "watch": "node-sass ./private/scss/index.scss ./public/styles/styles.css -w",
     "db": "bash ./private/database/createLocalDB.bash;bash ./private/database/createDB.bash",
     "test": "jest"
   },

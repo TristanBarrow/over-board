@@ -1,5 +1,5 @@
 
-var me = function(callback) {
+var getMe = function(callback) {
     $.get('/api/me', (data) => {
         callback(data.username);
     })
@@ -7,14 +7,12 @@ var me = function(callback) {
 
 var div = function(content, classType, onclick) {
     var node = document.createElement("DIV");
-    node.className = classType;
+    node.classList.add(classType);
 
     if (typeof onclick != 'undefined'){
         node.onclick = function() { onclick(content); }
     }
-
-    var textnode = document.createTextNode(content);
-    node.appendChild(textnode);
+    node.appendChild(content);
     return node;
 }
 
@@ -27,19 +25,27 @@ var requestBoardTricks = function(name) {
 
     $.get('/api/board/tricks/' + abr(name), function(data) {
         data.forEach(function(e) {
-            var board = div(e.name, 'trick', undefined);
-            body.appendChild(board);
-            
+            var profs = document.createElement('div');
+            var textnode = document.createTextNode(name);
+            profs.appendChild(textnode);
+            for (var i = 0; i < 5; i++) {
+                var radio = document.createElement("INPUT");
+                radio.setAttribute("type", "radio");
+                radio.value = i;
+                profs.appendChild(radio);
+            }
+            console.log(profs);
+            var board = div(profs, 'trick', undefined);
 
+            body.appendChild(board);
         });
     });
 }
 
 var populateBoards = function() {
     var body = document.getElementById('body');
-    var boards = document.createElement('div', {
-        className: 'body--boards'
-    });
+    var boards = document.createElement('div');
+    boards.classList.add('body--boards');
     body.appendChild(boards);
     $.get('/api/boards', (data) => {
 
@@ -52,12 +58,11 @@ var populateBoards = function() {
 var populateFollowers = function(me) {
     var following = document.getElementById('followingList');
     $.get('/api/following/' + me, (data) => {
-        console.log(data);
 
         data.forEach(function(e) {
             $.get('api/user/byId/' + e.following, (name) => {
-                console.log(name);
-                following.appendChild(div(name, 'follower', console.log));
+                var textnode = document.createTextNode(name);
+                following.appendChild(div(textnode, 'follower', console.log));
             });
         });
     })
@@ -68,8 +73,11 @@ var populateFollowers = function(me) {
 $(function(){
 
     populateBoards();
-    me((me) => {
-        document.getElementById('username').innerHTML = me;
+    getMe((me) => {
+        var username = document.getElementById('username');
+        username.innerHTML = me;
+        username.classList = 'username'
+
         populateFollowers(me);
     });
 });
