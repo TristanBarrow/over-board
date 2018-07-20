@@ -14,7 +14,7 @@
     "watch": "node-sass ./private/scss/index.scss ./public/styles/styles.css -w",
     "db": "bash ./private/database/createLocalDB.bash;bash ./private/database/createDB.bash",
     "test": "jest",
-    "build:wp": "webpack",
+    "build:wp": "webpack --watch",
     "dev-server": "webpack-dev-server"
   },
   "dependencies": {

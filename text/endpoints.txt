@@ -10,8 +10,8 @@ GET     /check-username/:username   # check if Username already exists
 
 -- FOLLOWERS --
 GET     /following/:username                # Gets a users followers
-POST    /following/:username + body         # adds a friend
-DELETE  /following/:username                # Deletes a friend
+POST    /following/:username + body         # adds a follower
+DELETE  /following/:username                # Deletes a follower
 
 -- TRICKS --
 GET     /tricks/:username                 # Gets a users tricks

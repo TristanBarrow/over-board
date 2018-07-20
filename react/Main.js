@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import SideBar from './components/sideBar/SideBar';
+import Body from './components/body/Body'
 import $ from 'jquery';
 
 class Main extends React.Component {
@@ -21,6 +22,7 @@ class Main extends React.Component {
             this.setState({
                 user: res.username
             })
+            console.log(res.username);
         });
     }
 
@@ -33,6 +35,7 @@ class Main extends React.Component {
                 <SideBar 
                     me={this.state.user}
                 />
+                <Body />
             </div>    
         );
     }

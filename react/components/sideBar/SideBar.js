@@ -1,16 +1,50 @@
 import React from 'react';
-import Friends from './Friends'
+import Followers from './Followers';
+import Users from './Users';
 
-const SideBar = (props) => {
-    console.log("Rendering Side Bar with: ", props)
-    return (
-        <div className='sideBar'>
-            - Friends -
-            <Friends
-                me={props.me}
-            />
-        </div>
-    )
-};
+class SideBar extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            followers: [],
+        }
+    }
+
+    componentDidMount = () => {
+        this.updateFollowers();
+    }
+
+    updateFollowers = () => {
+        $.get('/api/following', (data) => {
+            const u = data.map(e => {
+                return e.username;
+            });
+            this.setState({
+                followers: u
+            });
+        });
+    }
+
+    render () {
+        return (
+            <div className='sideBar'>
+                - Followers -
+                <Followers
+                    update={this.updateFollowers}
+                    followers={this.state.followers}
+                    me={this.props.me}
+                />
+                - Users -
+                <Users 
+                    update={this.updateFollowers}
+                    followers={this.state.followers}
+                    me={this.props.me}
+                />
+            </div>
+        )
+    };
+}
+
+
 
 export default SideBar;

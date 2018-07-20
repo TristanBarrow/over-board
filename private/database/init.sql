@@ -16,7 +16,7 @@ CREATE TABLE boards(
     name VARCHAR(100) NOT NULL
 );
 
--- Follower style relationshp not friend relationship
+-- Follower style relationshp not Follower relationship
 CREATE TABLE users_followers(
     id SERIAL PRIMARY KEY,
     me int REFERENCES users(id) NOT NULL,

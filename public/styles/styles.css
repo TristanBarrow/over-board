@@ -43,29 +43,28 @@ body {
   text-align: center;
   padding-top: 1rem; }
 
-.top-bar {
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 4rem;
-  position: fixed;
-  background-color: aqua; }
-
-.side-bar {
-  top: 4rem;
-  left: 0;
-  height: calc(100vh - 4rem);
-  width: 10rem;
-  position: fixed;
-  background-color: #392561; }
-
 .body {
-  top: 4rem;
-  left: 10rem;
-  height: calc(100vh - 4rem);
-  width: calc(100vw - 10rem);
   position: fixed;
-  background-color: #6e5d8f; }
+  top: 5.5rem;
+  left: 25rem;
+  width: calc(100vw - 25rem);
+  height: calc(100vh - 5.5rem);
+  background-color: #b292fb;
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+  padding-top: 1rem; }
+
+.board {
+  width: 45%;
+  height: 10rem;
+  font-size: 4.2rem;
+  background-color: #5C4FB7;
+  border-radius: 1rem;
+  box-shadow: 0rem 0.5rem 2rem #303030;
+  margin: 1rem;
+  border: solid 1px #483d96;
+  text-align: center; }
 
 .login-form {
   font-size: 2.4rem;
@@ -110,17 +109,6 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-content: stretch; }
-
-.board {
-  width: 45%;
-  height: 10rem;
-  font-size: 4.2rem;
-  background-color: lightblue;
-  border-radius: 1rem;
-  box-shadow: 0rem 0.5rem 2rem black;
-  margin: 1rem;
-  border: solid 1px white;
-  text-align: center; }
 
 .username {
   text-align: center;

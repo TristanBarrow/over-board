@@ -30,8 +30,8 @@ PUT     /user-info + body           # Updates users password
 
 -- FOLLOWERS --
 GET     /following/:id                # Gets a users followers
-POST    /following/:id + body         # adds a friend
-DELETE  /following/:id                # Deletes a friend
+POST    /following/:id + body         # adds a follower
+DELETE  /following/:id                # Deletes a follower
 
 -- TRICKS --
 GET     /tricks/:id                 # Gets a users tricks
