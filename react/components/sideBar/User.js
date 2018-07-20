@@ -18,9 +18,9 @@ class User extends React.Component{
 
     render() {
         return(
-            <div>
+            <div className='following'>
                 {this.props.username}
-                {this.props.showButton ? icon('add','add-follower-icon', this.addFollower) : ""}
+                {this.props.showButton ? icon('add','following__icon', this.addFollower) : ""}
             </div>
         );
     }   

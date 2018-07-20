@@ -23,9 +23,9 @@ class Follower extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className='following'>
                 {this.props.username}
-                {icon('remove','addFollowerIcon', this.removeFollower)}
+                {icon('remove','following__icon', this.removeFollower)}
             </div>
         );
     } 
