@@ -1,7 +1,6 @@
 import React from 'react';
 import Friend from './Friend';
 
-
 class Friends extends React.Component {
     constructor(props) {
         super(props);

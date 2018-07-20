@@ -13,7 +13,7 @@ class Friend extends React.Component {
     }
 
     getFriend = (id) => {
-        console.log('Friend id', id);
+        console.log('Friend id ', id);
         $.get('/api/user/byId/' + id, (data) => {
             this.setState({
                 username: data
