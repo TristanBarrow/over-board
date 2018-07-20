@@ -10,17 +10,23 @@
     <title>OverBoard: Create Account</title>
 </head>
 <body>
-    <h1>Create Account</h1>
-    <form>
-        <span class='login__username'>Username</span>
-        <input type="text" id="username">
-        <span class='login__password'>Password</span>
-        <input type="password" id="password">
-        <span class='login__password'>Verify Password</span>
-        <input type="password" id="ver-password">
-        <input type="button" value="Create Account" type="button" onclick="createAccount()">
+    <h1 class='login__title'>Create Account</h1>
+    <form class='login-form'>
+        <div class='input'>
+            <span class='input__description'>Username</span>
+            <input type="text" id="username" class='input__box'>
+        </div>
+        <div class='input'>
+            <span class='input__description'>Password</span>
+            <input type="password" id="password" class='input__box'>
+        </div>
+        <div class='input'>
+            <span class='input__description'>Verify Password</span>
+            <input type="password" id="ver-password" class='input__box'>
+        </div>
+        <div class="login-form__button" type="button" type="button" onclick="createAccount()">Create Account</div>
     </form>
-    <a href="/login">Back to Login</a>
-    <div id="error"></div>
+    <a class="back-to-login" href="/login">Back to Login</a>
+    <div class='error' id="error"></div>
 </body>
 </html>

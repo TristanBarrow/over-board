@@ -31,6 +31,17 @@ body {
   font-size: 3.2rem;
   padding: 1rem; }
 
+.logout {
+  position: fixed;
+  right: 1rem;
+  background-color: black;
+  color: #d4c2fd;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border-radius: .5rem; }
+  .logout:hover {
+    cursor: pointer; }
+
 .sideBar {
   position: fixed;
   top: 5.5rem;
@@ -66,6 +77,15 @@ body {
   border: solid 1px #483d96;
   text-align: center; }
 
+.login__title {
+  position: fixed;
+  top: 9%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5.2rem;
+  color: #430081;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
 .login-form {
   font-size: 2.4rem;
   position: absolute;
@@ -82,23 +102,35 @@ body {
   flex-direction: column;
   justify-content: space-around; }
   .login-form__button {
+    position: relative;
     background-color: #e4e4e4;
     border-radius: 1rem;
     text-align: center;
-    margin-left: 5rem;
-    margin-right: 5rem;
     font-size: 2rem;
     padding: .8rem;
     font-weight: bolder;
-    box-shadow: 0 .2rem 1rem #00224e; }
+    box-shadow: 0 .2rem 1rem #00224e;
+    max-width: 40rem;
+    left: 50%;
+    transform: translateX(-50%); }
     .login-form__button:hover {
       transition: .2s;
-      transform: translateY(-0.1rem);
-      box-shadow: 0 .5rem 1.5rem #00224e; }
+      transform: translate(-50%, -0.1rem);
+      box-shadow: 0 .5rem 1.5rem #00224e;
+      cursor: pointer; }
     .login-form__button:active {
       transition: .2s;
-      transform: translateY(0);
+      transform: translate(-50%, 0);
       box-shadow: 0 .2rem 1rem #00224e; }
+  .login-form__create {
+    color: #00224e;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 100;
+    border-top: 1px solid #1b648f;
+    border-bottom: 1px solid #1b648f; }
+    .login-form__create:hover {
+      color: #d3efff; }
 
 .body--boards {
   width: inherit;
@@ -122,3 +154,20 @@ body {
 
 .trick {
   font-size: 2.4rem; }
+
+.back-to-login {
+  position: relative;
+  top: 2.4rem;
+  left: 2.4rem;
+  font-size: 1.6rem;
+  color: black;
+  text-decoration: none; }
+  .back-to-login:hover {
+    text-decoration: underline; }
+
+.error {
+  position: fixed;
+  left: 50%;
+  bottom: 7rem;
+  font-size: 1.6rem;
+  transform: translateX(-50%); }

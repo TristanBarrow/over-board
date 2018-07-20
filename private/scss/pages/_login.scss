@@ -1,3 +1,13 @@
+.login__title {
+    position: fixed;
+    top: 9%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5.2rem;
+    color: #430081;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .login-form {
     font-size: $large_size;
     position: absolute;
@@ -13,27 +23,41 @@
     justify-content: space-around;
 
     &__button {
+        position: relative;
         background-color:#e4e4e4;
         border-radius: 1rem;
         text-align: center;
-        margin-left: 5rem;
-        margin-right: 5rem;
         font-size: 2rem;
         padding: .8rem;
         font-weight: bolder;
         box-shadow: 0 .2rem 1rem #00224e;
+        max-width: 40rem;
+        left: 50%;
+        transform: translateX(-50%);
         //border: 1px solid black;
         
         &:hover {
             transition: .2s;
-            transform: translateY(-.1rem);
+            transform: translate(-50%, -.1rem);
             box-shadow: 0 .5rem 1.5rem #00224e;
+            cursor: pointer;
         }
         &:active {
             transition: .2s;
-            transform: translateY(0);
+            transform: translate(-50%, 0);
             box-shadow: 0 .2rem 1rem #00224e;
         }
         
+    }
+    &__create {
+        color: #00224e;
+        text-align: center;
+        text-decoration: none;
+        font-weight: 100;
+        border-top: 1px solid #1b648f;
+        border-bottom: 1px solid #1b648f;
+        &:hover {
+            color: #d3efff;
+        }
     }
 }

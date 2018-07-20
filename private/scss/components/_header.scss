@@ -5,3 +5,16 @@
     font-size:3.2rem;
     padding: 1rem;
 }
+.logout {
+    position: fixed;
+    right: 1rem;
+    background-color: black;
+    color: lighten(rgb(107, 47, 247), 30);
+    padding: 1rem;
+    font-size: 1.4rem; 
+    border-radius: .5rem; 
+    &:hover {
+        cursor: pointer;
+    }
+
+}

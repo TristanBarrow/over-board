@@ -1,0 +1,19 @@
+.back-to-login {
+    position: relative;
+    top: 2.4rem;
+    left: 2.4rem;
+    font-size: 1.6rem;
+    color: black;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.error {
+    position: fixed;
+    left: 50%;
+    bottom: 7rem;
+    font-size: 1.6rem;
+    transform: translateX(-50%);
+}

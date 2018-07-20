@@ -7,7 +7,7 @@ var login = function() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
     if (username == '') {
-        err('Username is Reqired');
+        err('Username is Required');
         return;
     }
     if (password = '') {
